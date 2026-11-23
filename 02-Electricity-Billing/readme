@@ -1,0 +1,139 @@
+# Case Study 2: Progressive Electricity Billing
+
+## 1. Problem Statement
+
+Electricity billing depends on the number of units consumed by a customer. Different rates are charged for different consumption slabs. This Python program calculates electricity bills for multiple consumers using progressive slab rates and generates an individual bill report.
+
+## 2. Objectives
+
+- To collect consumer details and electricity consumption.
+- To calculate energy charges using progressive slab rates.
+- To add fixed charges to the electricity bill.
+- To generate bills for multiple consumers.
+- To display a summary of all consumers processed.
+
+## 3. Assumptions
+
+The following electricity rates are assumed for this educational project:
+
+- First 100 units: ₹1.50 per unit.
+- Next 100 units: ₹2.50 per unit.
+- Next 100 units: ₹4.00 per unit.
+- Above 300 units: ₹6.00 per unit.
+- Fixed charge: ₹50 per consumer.
+
+These are sample rates for the project and do not represent an actual electricity provider's tariff.
+
+## 4. Algorithm
+
+1. Start the program.
+2. Display the Electricity Billing System heading.
+3. Read the number of consumers.
+4. Create an empty list to store consumer details.
+5. Repeat for each consumer:
+   - Read consumer name.
+   - Read electricity units consumed.
+   - Check whether the units are valid.
+   - Calculate energy charges using progressive slab rates.
+   - Add the fixed charge.
+   - Store the consumer details in the list.
+6. Display the electricity bill report for all consumers.
+7. Display the total number of consumers processed.
+8. Stop the program.
+
+## 5. Flowchart
+
+Start  
+↓  
+Enter number of consumers  
+↓  
+Collect consumer details  
+↓  
+Enter electricity units  
+↓  
+Are units valid?  
+- No → Display invalid input message
+- Yes → Calculate charges using progressive slabs
+
+↓  
+Add fixed charge  
+↓  
+Store consumer bill details  
+↓  
+Process remaining consumers  
+↓  
+Display electricity bill report  
+↓  
+Display total consumers processed  
+↓  
+End
+
+## 6. Pseudocode
+
+BEGIN
+
+INPUT number_of_consumers
+
+CREATE empty consumers list
+
+FOR each consumer
+
+    INPUT consumer_name
+    INPUT units_consumed
+
+    IF units_consumed < 0 THEN
+        DISPLAY "Invalid units"
+
+    ELSE
+
+        IF units_consumed <= 100 THEN
+            bill = units_consumed * 1.50
+
+        ELSE IF units_consumed <= 200 THEN
+            bill = (100 * 1.50) + ((units_consumed - 100) * 2.50)
+
+        ELSE IF units_consumed <= 300 THEN
+            bill = (100 * 1.50) + (100 * 2.50) + ((units_consumed - 200) * 4.00)
+
+        ELSE
+            bill = (100 * 1.50) + (100 * 2.50) + (100 * 4.00) + ((units_consumed - 300) * 6.00)
+
+        END IF
+
+        total_bill = bill + 50
+
+        STORE consumer details in consumers list
+
+    END IF
+
+END FOR
+
+DISPLAY electricity bill report
+
+DISPLAY total consumers processed
+
+END
+
+## 7. Python Source Code
+
+The Python program is saved in `electricity.py`.
+
+It uses variables, lists, loops, conditional statements, arithmetic operators, and comparison operators to calculate electricity bills for multiple consumers.
+
+## 8. Test Cases
+
+| Test Case | Consumer | Units Consumed | Expected Total Bill |
+|---|---|---:|---:|
+| TC01 | Ravi | 80 | ₹170 |
+| TC02 | Priya | 150 | ₹325 |
+| TC03 | Arun | 250 | ₹650 |
+| TC04 | Sneha | 400 | ₹1450 |
+| TC05 | Kiran | 0 | ₹50 |
+
+## 9. Output Screenshots
+
+Add screenshots of the successfully executed Python program in the `screenshots` folder.
+
+## 10. Conclusion
+
+The Progressive Electricity Billing program successfully calculates electricity bills for multiple consumers using different consumption slabs. It applies fixed charges, displays individual bills, and generates a billing report. This project demonstrates the practical application of Python variables, lists, loops, conditional statements, and arithmetic operators.
